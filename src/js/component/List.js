@@ -19,3 +19,8 @@ export const List = (props) => {
 		</div>
 	);
 };
+
+List.propTypes = {
+	setterList: PropTypes.func,
+	list: PropTypes.array,
+};

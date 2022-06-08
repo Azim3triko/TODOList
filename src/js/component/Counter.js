@@ -8,3 +8,7 @@ export const Counter = (props) => {
 		</div>
 	);
 };
+
+Counter.propTypes = {
+	list: PropTypes.string,
+};

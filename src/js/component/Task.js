@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 export const Task = (props) => {
 	function deleteTask(e) {
-		props.setterCount((prevCount) =>
-			prevCount.filter((task, index) => {
+		props.setterList((prevList) =>
+			prevList.filter((task, index) => {
 				if (index !== props.id) return true;
 			})
 		);
@@ -17,4 +17,12 @@ export const Task = (props) => {
 			</span>
 		</li>
 	);
+};
+
+Task.propType = {
+	id: PropTypes.number,
+	task: PropTypes.string,
+	deleteTask: PropTypes.func,
+	setterList: PropTypes.func,
+	prevList: PropTypes.func,
 };

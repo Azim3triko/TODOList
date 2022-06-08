@@ -8,13 +8,13 @@ export let Input = (props) => {
 
 	function pressEnter(e) {
 		if (e.key === "Enter") {
-			props.setterList((prevCount) => [...prevCount, props.value]);
+			props.setterList((prevList) => [...prevList, props.value]);
 			props.setter("");
 			e.stopPropagation();
 		}
 		console.log(e);
 	}
-
+	console.log(props);
 	return (
 		<div className="w-100">
 			<input
@@ -23,8 +23,14 @@ export let Input = (props) => {
 				style={{ width: "100%" }}
 				value={props.value}
 				onChange={addNewTask}
-				onKeyUp={pressEnter}
-			/>
+				onKeyUp={pressEnter}></input>
 		</div>
 	);
+};
+
+Input.propTypes = {
+	text: PropTypes.string,
+	value: PropTypes.string,
+	setter: PropTypes.func,
+	setterList: PropTypes.func,
 };
